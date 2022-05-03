@@ -1,12 +1,15 @@
 import openai
 import config
 
-
+# Defining GPT3's configuration
 def gpt3(stext):
     response = openai.Completion.create(
+        # Engine has to be DaVinci to use Summarization
         engine="text-davinci-001",
         prompt=stext,
+        # Temperature is emotion
         temperature=0.1,
+        # Tokens define answer length
         max_tokens=100,
         top_p=1,
         frequency_penalty=0,
@@ -16,7 +19,7 @@ def gpt3(stext):
     # print(content)
     return response.choices[0].text
 
-
-query = 'What is up dog'
+# Querying GPT3, in this case it would answer "Test"
+query = 'Say this is a test'
 response = gpt3(query)
 print(response)
