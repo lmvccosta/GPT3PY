@@ -19,7 +19,7 @@ def gpt3(stext):
     # print(content)
     return response.choices[0].text
 
-# Querying GPT3, in this case it would answer "Test"
+# Querying GPT3, in this case it would answer "This is a test"
 query = 'Say this is a test'
 response = gpt3(query)
 print(response)
